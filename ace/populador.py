@@ -16,11 +16,9 @@ def retornarValor(cidade):
 		soup = BeautifulSoup(html_content, 'lxml')
 		matches = soup.find_all("div", {"class":"indicador__valor"})
 	
-	print(matches)
-	exit(0)
 	#Determinando o match
 	for elemento in matches:
-		if 'R$' in elemento.get_text(strip=True)[:2]:
+		if 'R$' in elemento.get_text(strip=True)[-2:]:
 			match = elemento.get_text(strip=True)
 			return match
 	return None
