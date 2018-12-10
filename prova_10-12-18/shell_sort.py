@@ -6,12 +6,13 @@ def shell_sort(lista):
 	while h != 1:
 		h = h//3
 		for i in range(h,len(lista)):
-			count+=1
 			aux = i
-			while (lista[aux-1] > lista[aux]):
-				lista[aux-1],lista[aux] = lista[aux],lista[aux-1]
-				if aux > 1:
-					aux-=h
+			while (lista[aux-h] > lista[aux]):
+				count+=1
+				lista[aux-h],lista[aux] = lista[aux],lista[aux-h]
+				aux-=h
+				if aux < h:
+					break
 	print(count)
 	return lista
 def setH(lista):

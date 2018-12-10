@@ -4,8 +4,8 @@ def insertion_sort(lista):
 	count = 0
 	for i in range(1,len(lista)):
 		aux = i
-		count+=1
 		while (lista[aux-1] > lista[aux]):
+			count+=1
 			lista[aux-1],lista[aux] = lista[aux],lista[aux-1]
 			if aux > 1:
 				aux-=1
