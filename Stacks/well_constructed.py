@@ -5,6 +5,7 @@ from stack import Stack
 # exp = "3-[15+2*(4-3)*[2+(5-1)]]/4"
 exp = "5-[4+(0-3]"
 print(exp)
+# [()]
 
 def charInList(c, list):
 	for x in list:
@@ -12,38 +13,25 @@ def charInList(c, list):
 			return True
 	return False
 
-def wellConstructed(pilha):
+def wellConstructed(expTmp):
 	finalDecision = True
-	tmp = []
-	for i in range(pilha.lenStack()):
-		char = pilha.pop()
-		if char == ']':
-			tmp.append('[')
-			continue
-		elif char == ')':
-			tmp.append('(')
-			continue
-	
-		if char == '(' or char == '[':
-			if charInList(char, tmp) == True:
-				tmp.remove(char)
-			else:
-				finalDecision = False
-	if len(tmp) != 0:
-		finalDecision = False
-	return finalDecision
-
-def constructStack(expTmp):
-	tmpPilha = Stack(100)
+	pilha = Stack(10)
 
 	for x in expTmp:
-		tmpPilha.push(x)
+		if(x == '{' or x == '[' or x == '('):
+			pilha.push(x)
 
-	return tmpPilha
+		if x == ')' and pilha.pop() != '(':
+			finalDecision = False
+			print(x)
+		elif x == ']' and pilha.pop() != '[':
+			finalDecision = False
+			print(x)
+		elif x == '}' and pilha.pop() != '{':
+			finalDecision = False
+			print(x)
 
-p = constructStack(exp)
+	pilha.printStack()
+	return finalDecision
 
-print(wellConstructed(p))
-p.printStack()
-
-
+print(wellConstructed(exp))
