@@ -22,3 +22,8 @@ f.imprimir()
 
 f.inserir(6)
 f.imprimir()
+f.remover()
+f.remover()
+f.remover()
+f.remover()
+f.imprimir()

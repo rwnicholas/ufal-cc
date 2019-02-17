@@ -25,27 +25,29 @@ class Fila:
 		else:
 			self.fim.proximo = Celula(item)
 			self.fim = self.fim.proximo
-
+		
 		self.tamanho += 1
+		
 
 	def remover(self):
 		aux = self.inicio
 		if self.vazio():
-			print("Fila vazia")
-			return False
-		self.inicio = self.inicio.proximo
-		self.tamanho -= 1
+			print("Vazia")
+		else:
+			self.inicio = self.inicio.proximo
+			retorno = aux.item
 
-		valor = aux.item
-		del aux
-		return valor
+			del aux
+			self.tamanho -= 1
+
+			return retorno
 
 	def vazio(self):
 		return self.tamanho == 0
 
 	def imprimir(self):
 		aux = self.inicio
-		while(aux != None):
+		while aux != None:
 			print(aux.item)
 			aux = aux.proximo
-		print("----------------------------------")
+		print("------------------------------------------")

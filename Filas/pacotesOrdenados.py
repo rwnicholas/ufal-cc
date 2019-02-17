@@ -5,7 +5,8 @@ from fila_D import Fila
 principal = Fila()
 auxiliar = Fila()
 
-pacotes = [5,4,3,2,1]
+# pacotes = [5,4,3,2,1]
+pacotes = [1, 4, 6, 2, 8, 3, 5, 7, 10, 9, 11, 15, 13, 14, 12]
 
 for x in pacotes:
 	auxiliar.inserir(x)
