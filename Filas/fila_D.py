@@ -36,13 +36,17 @@ class Fila:
 			return None
 		aux = self.inicio
 		self.inicio = self.inicio.proximo
+		self.tamanho -= 1
 		return aux.item
 
 	def imprimir(self):
 		aux = self.inicio
 		while(aux != None):
 			print(aux.item)
-			aux = aux.proximo
+			if aux.proximo != None:
+				aux = aux.proximo
+			else:
+				aux = None
 		print("-----------------------------------------")
 
 
