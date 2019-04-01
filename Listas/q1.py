@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from lista import Lista
+from lista2 import Lista
 
 principal = Lista()
 tmp = [1,2,3,4,5,6,7,8,9,10]
@@ -21,4 +21,4 @@ def somaDeDois(valor):
 	
 	return False
 
-print(somaDeDois(10))
+print(somaDeDois(15))

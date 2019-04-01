@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from lista import Lista
+from lista2 import Lista
 principal = Lista()
 agenda = [('nick', 999), ('lucas', 444), ('fillipe', 555),('dudu', 666), ('gean', 616)]
 def reorganizar(item):
