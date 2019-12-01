@@ -2,5 +2,6 @@
 	"files.associations": {
 		"ostream": "cpp"
 	},
-	"editor.insertSpaces": false
+	"editor.insertSpaces": false,
+	"python.pythonPath": "/usr/bin/python3"
 }
